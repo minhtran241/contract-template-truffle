@@ -27,7 +27,7 @@ async function main() {
 		// Replace this with the address of your deployed contract
 		process.env.INBOX_CONTRACT
 	);
-	// Issuing a transaction that calls the `echo` method
+	// Issuing a transaction that calls the `setMessage` method (writing function)
 	const tx = contract.methods.setMessage('Hello, world!');
 	const receipt = await tx
 		.send({
@@ -42,6 +42,8 @@ async function main() {
 		});
 	// The transaction is now on chain!
 	console.log(`Mined in block ${receipt.blockNumber}`);
+
+	// Calling `message` method (reading function, not a transaction)
 	const message = await contract.methods.message().call();
 	console.log(`Message on chain is now ${message}`);
 }
