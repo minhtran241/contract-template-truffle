@@ -50,7 +50,7 @@ yarn test [path/to/file]
 
 Deploy by connecting to Infura node (specific provider)
 
-`You have to set up all the environment variables before doing this step`
+`⚠️ You have to set up all the environment variables before doing this step`
 
 ```
 yarn deploy
